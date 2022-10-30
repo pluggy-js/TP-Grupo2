@@ -35,14 +35,8 @@
 			<Option compile="1" />
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
-		<Unit filename="colaestatica.h">
-			<Option target="&lt;{~None~}&gt;" />
-		</Unit>
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="piladinamica.h">
-			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
 		<Extensions />
 	</Project>

@@ -4,66 +4,70 @@ typedef int actual;
 typedef int lFin;
 int x;
 int l;
-typedef struct reg {
-    int *actual;
-    int *cab;
-}reg;
-typedef struct nuevo{
-    int *cab;
-    int *sig;
-};
+typedef int Tdato;
 
-int LFin (reg)){
-    lFin = (reg.actual == reg.cab);
-}
+typedef struct{
+    Tdato info;
+    Puntero sig;
+}Nodo;
+typedef Nodo Puntero;
+struct Tlista{
+    Puntero cab;
+    Puntero actual;
+}Tlista;
+typedef Tlista lista;
+
+
+int LFin (){
+    if (lista.actual == lista.cab){
+        lFin = True;
+    }
+};
 
 void LInsertarPpio (){
-    int *t;
-    int *nuevo;
+    Puntero t, nuevo;
     CrearNodo (nuevo, x);
-        if (l.cab == NULL) {
+        if (li.cab == NULL) {
             nuevo.sig = nuevo;
-            l.cab = nuevo;
+            li.cab = nuevo;
         }else{
-            t = l.cab;
-            while (&t.sig != l.cab){
-                t = &t->sig;
+            t = li.cab;
+            while (&t.sig != li.cab){
+                t = &t,sig;
             }
-            nuevo.sig = l.cab;
-            *t.sig = nuevo;
-            l.cab = nuevo;
+            &nuevo.sig = li.cab;
+            &t.sig = nuevo;
+            li.cab = nuevo;
         }
-}
-void lBorrarActual (){
-int aux*
-int t*
-if (l.cab*sig = l.cab){
-	if (l.cab*sig = l.cab){
-		t = l ->cab
-		l.cab = null
-		l.actual = null
-		disponer(t) //???????
-		}else{
-			aux = l.actual
-			t = l->cab
-		while (&t.sig != l.cab){
-			t = t*sig
-			}
-		l->actual = l->actual*sig
-		l->cab = l->actual
-		t*sig = l->actual
-		Disponer (aux)
-		}else{
-			aux = l->actual
-			t = l->cab
-			while (t*sig != l->actual){
-				t = t*sig
-				}
-			l->actual = l->actual*sig
-			t*sig = l->actual
-			Disponer (aux)
-			}
-}
 };
-
+void lBorrarActual (){
+    Puntero aux, t;
+    if (li.cab = li.actual){
+        if (li.&cab.sig = li.actual){
+            t = li.cab;
+            li.cab = NULL;
+            li.actual = NULL;
+            Disponer (t);
+        }else{
+            aux = li.actual;
+            t = li.cab;
+            while (t.*sig != li.cab){
+                t = t.*sig;
+            }
+           li.actual = li.&actual.sig;
+           li.cab = li.actual;
+           &t.sig = li.actual;
+           Disponer (aux);
+        }
+    }else{
+        aux = li.actual;
+        t=li.cab;
+        while (&t.sig != li.actual){
+            t = &t.sigl
+        }
+        li.actual = li.*actual.sig;
+        t.sig = li.actual;
+        Disponer (aux);
+    }
+}
 #endif // LISTAS_H_INCLUDED
