@@ -1,73 +1,92 @@
 #ifndef LISTAS_H_INCLUDED
 #define LISTAS_H_INCLUDED
-typedef int actual;
-typedef int lFin;
-int x;
-int l;
+#include <stdio.h>
+#include <stdlib.h>
 typedef int Tdato;
 
-typedef struct{
+int fin;
+
+Tdato x;
+
+typedef struct Nodo{
     Tdato info;
-    Puntero sig;
-}Nodo;
-typedef Nodo Puntero;
+    struct Nodo *sig;
+}NodoL;
+
+NodoL* CrearNodo (Tdato x);
+
+typedef NodoL* puntero;
+
 struct Tlista{
-    Puntero cab;
-    Puntero actual;
+    puntero cab;
+    puntero actual;
 }Tlista;
-typedef Tlista lista;
 
 
-int LFin (){
-    if (lista.actual == lista.cab){
-        lFin = True;
+
+///ACA EMPIEZA EL CODIGO
+
+NodoL* CrearNodo(struct Tlista *l,Tdato x){
+    NodoL* nodo= Tlista.cab;
+    nodo = malloc(sizeof(NodoL));
+    nodo->info=x;
+    nodo->sig = Tlista.cab;
+    return nodo;
+}
+
+int LFin (struct Tlista *l, int fin){
+    if (Tlista.actual == Tlista.cab){
+        fin = (1);
     }
+    return (fin);
 };
 
-void LInsertarPpio (){
-    Puntero t, nuevo;
-    CrearNodo (nuevo, x);
-        if (li.cab == NULL) {
-            nuevo.sig = nuevo;
-            li.cab = nuevo;
+void LInsertarPpio (struct Tlista *l, Tdato x){
+    Tlista t, nuevo;
+    Tdato n;
+    CrearNodo (nuevo, t);
+        if (Tlista.cab == NULL) {
+            nuevo->sig = nuevo;
+            Tlista.cab = nuevo;
         }else{
-            t = li.cab;
-            while (&t.sig != li.cab){
-                t = &t,sig;
+            t = Tlista.cab;
+            while (t->sig != Tlista.cab){
+                t = t->sig;
             }
-            &nuevo.sig = li.cab;
-            &t.sig = nuevo;
-            li.cab = nuevo;
+            nuevo->sig = Tlista.cab;
+            t->sig = nuevo;
+            Tlista.cab = nuevo;
         }
 };
-void lBorrarActual (){
-    Puntero aux, t;
-    if (li.cab = li.actual){
-        if (li.&cab.sig = li.actual){
-            t = li.cab;
-            li.cab = NULL;
-            li.actual = NULL;
-            Disponer (t);
+void lBorrarActual (struct Tlista *l){
+    puntero aux, t;
+    if (Tlista.cab = Tlista.actual){
+        if (Tlista.cab->sig = Tlista.actual){
+            t = Tlista.cab;
+            Tlista.cab = NULL;
+            Tlista.actual = NULL;
+            free (t);
         }else{
-            aux = li.actual;
-            t = li.cab;
-            while (t.*sig != li.cab){
-                t = t.*sig;
+            aux = Tlista.actual;
+            t = Tlista.cab;
+            while (t->sig != Tlista.cab){
+                t = t->sig;
             }
-           li.actual = li.&actual.sig;
-           li.cab = li.actual;
-           &t.sig = li.actual;
-           Disponer (aux);
+           Tlista.actual = Tlista.actual->sig;
+           Tlista.cab = Tlista.actual;
+           t->sig = Tlista.actual;
+           free (aux);
         }
     }else{
-        aux = li.actual;
-        t=li.cab;
-        while (&t.sig != li.actual){
-            t = &t.sigl
+        aux = Tlista.actual;
+        t= Tlista.cab;
+        while (t->sig != Tlista.actual){
+            t = t->sig;
         }
-        li.actual = li.*actual.sig;
-        t.sig = li.actual;
-        Disponer (aux);
+        Tlista.actual = Tlista.actual->sig;
+        t->sig = Tlista.actual;
+        free (aux);
     }
 }
+
 #endif // LISTAS_H_INCLUDED
