@@ -1,10 +1,10 @@
 # depslib dependency file v1.0
-1667325975 source:c:\users\gasto\onedrive\escritorio\facultad\c - informatica\trabajo practico introinformatica\trabajoc\main.c
+1667414964 source:c:\users\gasto\onedrive\escritorio\facultad\c - informatica\trabajo practico introinformatica\trabajoc\main.c
 	<stdio.h>
 	<stdlib.h>
 	"listas.h"
 
-1667329245 c:\users\gasto\onedrive\escritorio\facultad\c - informatica\trabajo practico introinformatica\trabajoc\listas.h
+1667415052 c:\users\gasto\onedrive\escritorio\facultad\c - informatica\trabajo practico introinformatica\trabajoc\listas.h
 	<stdio.h>
 	<stdlib.h>
 

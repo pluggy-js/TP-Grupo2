@@ -13,7 +13,6 @@ typedef struct Nodo{
     struct Nodo *sig;
 }NodoL;
 
-NodoL* CrearNodo (Tdato x);
 
 typedef NodoL* puntero;
 
@@ -22,6 +21,7 @@ struct Tlista{
     puntero actual;
 }Tlista;
 
+NodoL* CrearNodo (struct Tlista *l,Tdato x);
 
 
 ///ACA EMPIEZA EL CODIGO
@@ -42,8 +42,7 @@ int LFin (struct Tlista *l, int fin){
 };
 
 void LInsertarPpio (struct Tlista *l, Tdato x){
-    Tlista t, nuevo;
-    Tdato n;
+    puntero t, nuevo;
     CrearNodo (nuevo, t);
         if (Tlista.cab == NULL) {
             nuevo->sig = nuevo;
@@ -88,5 +87,25 @@ void lBorrarActual (struct Tlista *l){
         free (aux);
     }
 }
+
+void LInsertarOrdenado (struct Tlista *l, Tdato x, char ord){
+    puntero aux, nuevo;
+    CrearNodo(nuevo,x);
+    if (Tlista.cab == Tlista.actual){
+        Tlista.cab = nuevo;
+    }else{
+        if ((x > Tlista.cab->info && ord == 'D') || (x < Tlista.cab->info && ord =='A')) {
+            nuevo->sig = Tlista.cab;
+            Tlista.cab = nuevo; ///HAY QUE REVISAR ACA, SI HAY QUE HACER ALGUN CAMBIO O AGREGAR PARA LAS LISTAS CIRCULARES
+        }else{
+            aux = Tlista.cab;
+            while ((aux->sig != Tlista.actual && (x > aux->sig->info && ord == 'A')) || (x < aux->sig->info && ord == 'D')){
+                aux = aux->sig;
+            }
+            nuevo->sig = aux->sig;
+            aux->sig = nuevo;
+        }
+    }
+};
 
 #endif // LISTAS_H_INCLUDED
